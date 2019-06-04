@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Rules from './rules';
-import Logs from './logs';
-import Config from './config';
+import Logs from './Logs';
+import Config from './Config';
 import Settings from './settings';
-import Documentation from './documentation';
+import Documentation from './Documentation';
 import Feedback from './feedback';
 
 
@@ -19,7 +19,7 @@ const styles = theme => ({
 
 function Content(props) {
   const { classes, activePage } = props;
-  const menuType = 'Журнал';// use props
+  const menuType = 'Правила';// use props
   switch(menuType){
     case "Правила":
       return <Rules />

@@ -6,7 +6,7 @@ export let rules = [
     source: ['192.168.0.1 80', '192.168.0.1 80'],
     dir: '->',
     dest: ['10.10.5.55 80', '10.10.5.5 80'],
-    body: '(msg: whaat)',
+    body: 'msg: whaat',
     description: 'lal',
   },
   {
@@ -14,9 +14,9 @@ export let rules = [
     action: 'alert',
     proto: 'tcp',
     source: ['192.168.0.1 80', '192.168.0.1 80'],
-    dir: '->',
+    dir: '<-',
     dest: ['10.10.5.55 80', '10.10.5.5 80'],
-    body: '(msg: whaat)',
+    body: 'msg: whaat',
     description: 'lal',
   },
   {
@@ -26,17 +26,17 @@ export let rules = [
     source: ['192.168.0.1 80', '192.168.0.1 80'],
     dir: '->',
     dest: ['10.10.5.55 80', '10.10.5.5 80'],
-    body: '(msg: whaat)',
+    body: 'msg: whaat ',
     description: 'lal',
   },
   {
     id: 'rule_4',
     action: 'alert',
-    proto: 'tcp',
-    source: ['192.168.0.1 80', '192.168.0.1 80'],
+    proto: 'any',
+    source: ['any'],
     dir: '->',
     dest: ['10.10.5.55 80', '10.10.5.5 80'],
-    body: '(msg: whaat)',
+    body: 'msg: whaat',
     description: 'lal',
   },
   {
@@ -46,7 +46,7 @@ export let rules = [
     source: ['192.168.0.1 80', '192.168.0.1 80'],
     dir: '->',
     dest: ['10.10.5.55 80', '10.10.5.5 80'],
-    body: '(msg: whaat)',
+    body: '',
     description: 'lal',
   },
   {
@@ -56,8 +56,8 @@ export let rules = [
     source: ['192.168.0.1 80', '192.168.0.1 80'],
     dir: '->',
     dest: ['10.10.5.55 80', '10.10.5.5 80'],
-    body: '(msg: whaat)',
-    description: 'lal',
+    body: 'msg: whaat',
+    description: '',
   },
   {
     id: 'rule_7',
@@ -66,7 +66,7 @@ export let rules = [
     source: ['192.168.0.1 80', '192.168.0.1 80'],
     dir: '->',
     dest: ['10.10.5.55 80', '10.10.5.5 80'],
-    body: '(msg: whaat)',
+    body: 'msg: whaat',
     description: 'lal',
   },
   {
@@ -76,7 +76,7 @@ export let rules = [
     source: ['192.168.0.1 80', '192.168.0.1 80'],
     dir: '->',
     dest: ['10.10.5.55 80', '10.10.5.5 80'],
-    body: '(msg: whaat)',
+    body: 'msg: whaat',
     description: 'lal',
   },
   {
@@ -86,8 +86,8 @@ export let rules = [
     source: ['192.168.0.1 80', '192.168.0.1 80'],
     dir: '->',
     dest: ['10.10.5.55 80', '10.10.5.5 80'],
-    body: '(msg: whaat)',
-    description: 'lal',
+    body: 'msg: whaat',
+    description: '',
   },
 ];
 

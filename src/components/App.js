@@ -4,10 +4,10 @@ import { createMuiTheme, withStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
-import Navigator from './components/Navigator';
-import Content from './components/content';
-import Header from './components/Header';
-import Logout from './components/logout';
+import Navigator from './Navigator';
+import Content from './Content';
+import Header from './Header';
+import Logout from './Logout';
 
 let theme = createMuiTheme({
   typography: {

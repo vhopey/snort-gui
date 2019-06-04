@@ -1,20 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
+import { logs } from '../testData'
 
 
-function Rules(props) {
+function Logs(props) {
   const { classes } = props;
 
   return (
     <Paper>
-      правила
+      logs
     </Paper>
   );
 }
 
-Rules.propTypes = {
-  classes: PropTypes.object,
+Logs.propTypes = {
+  classes: PropTypes.object.isRequired,
 };
 
-export default Rules;
+export default Logs;

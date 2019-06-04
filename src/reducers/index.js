@@ -1,3 +1,4 @@
+import { rules, logs, settings, feedbacks } from '../testData';
 import {
   OPEN_PAGE,
 } from '../actions';
@@ -5,6 +6,10 @@ import {
 
 const initialState = {
   activePage: 'rules',
+  rules,
+  logs,
+  settings,
+  feedbacks,
   name: '',
 };
 
