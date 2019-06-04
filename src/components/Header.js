@@ -26,7 +26,7 @@ const styles = theme => ({
 });
 
 function Header(props) {
-  const { classes, onDrawerToggle } = props;
+  const { classes, onDrawerToggle, activePage } = props;
 
   return (
     <Fragment>
@@ -47,7 +47,7 @@ function Header(props) {
             </Hidden>
             <Grid item>
               <Typography>
-                {props.activeMenu}
+                {activePage}
               </Typography>
             </Grid>
             <Grid item xs />

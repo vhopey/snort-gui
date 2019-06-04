@@ -20,16 +20,20 @@ import FeedbackIcon from '@material-ui/icons/Feedback';
 const categories = [
   {
     children: [
-      { id: 'Rules', icon: <RulesIcon />, active: true },
-      { id: 'Logs', icon: <LogsIcon /> },
-      { id: 'Configuration', icon: <ConfigurationIcon /> },
-      { id: 'Settings', icon: <SettingsIcon /> },
-      { id: 'Documentation', icon: <DocumentIcon /> },
+      { id: 'Правила', icon: <RulesIcon /> },
+      { id: 'Журнал', icon: <LogsIcon /> },
+      { id: 'Конфигурация', icon: <ConfigurationIcon /> },
     ],
   },
   {
     children: [
-      { id: 'Feedback', icon: <FeedbackIcon /> },
+      { id: 'Настройки', icon: <SettingsIcon /> },
+      { id: 'Документация', icon: <DocumentIcon /> },
+    ],
+  },
+  {
+    children: [
+      { id: 'Обратная связь', icon: <FeedbackIcon /> },
     ],
   },
 ];

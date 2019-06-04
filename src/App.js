@@ -7,6 +7,7 @@ import Hidden from '@material-ui/core/Hidden';
 import Navigator from './components/Navigator';
 import Content from './components/content';
 import Header from './components/Header';
+import Logout from './components/logout';
 
 let theme = createMuiTheme({
   typography: {
@@ -158,6 +159,7 @@ class App extends React.Component {
 
     return (
       <ThemeProvider theme={theme}>
+        {/* <Logout /> */}
         <div className={classes.root}>
           <CssBaseline />
           <nav className={classes.drawer}>

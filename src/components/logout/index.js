@@ -1,20 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Paper from '@material-ui/core/Paper';
 
 
-function Config(props) {
+function Logout(props) {
   const { classes } = props;
 
   return (
-    <Paper>
-      conf
-    </Paper>
+    <>
+      logout
+    </>
   );
 }
 
-Config.propTypes = {
+Logout.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default Config;
+export default Logout;
