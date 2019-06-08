@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux';
 import Rules from './rules';
 import Logs from './Logs';
 import Config from './Config';
@@ -9,18 +9,9 @@ import Documentation from './Documentation';
 import Feedback from './feedback';
 
 
-const styles = theme => ({
-  paper: {
-    maxWidth: 936,
-    margin: 'auto',
-    overflow: 'hidden',
-  },
-});
-
 function Content(props) {
-  const { classes, activePage } = props;
-  const menuType = 'Правила';// use props
-  switch(menuType){
+  const { activePage } = props;
+  switch(activePage){
     case "Правила":
       return <Rules />
     case "Журнал":
@@ -39,8 +30,10 @@ function Content(props) {
 }
 
 Content.propTypes = {
-  classes: PropTypes.object.isRequired,
   menuTypes: PropTypes.string.isRequired,
 };
 
-export default withStyles(styles)(Content);
+export default connect(
+  state => ({activePage: state.activePage}),
+  {},
+)(Content);

@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import clsx from 'clsx';
 import { withStyles } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
@@ -14,6 +15,7 @@ import DocumentIcon from '@material-ui/icons/LibraryBooks';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ConfigurationIcon from '@material-ui/icons/SettingsApplications';
 import FeedbackIcon from '@material-ui/icons/Feedback';
+import { toggleMenu } from '../actions';
 
 
 
@@ -90,6 +92,7 @@ function Navigator(props) {
             <ListItem />
             {children.map(({ id: childId, icon, active }) => (
               <ListItem
+                onClick={() => props.toggleMenu(childId)}
                 button
                 dense
                 key={childId}
@@ -122,4 +125,9 @@ Navigator.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Navigator);
+export default connect(
+  () => {},
+  {
+    toggleMenu,
+  },
+)(withStyles(styles)(Navigator));
