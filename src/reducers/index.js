@@ -8,7 +8,7 @@ import {
 
 
 const initialState = {
-  activePage: 'Правила',
+  activePage: 'Журнал',
   rules,
   test: rules,
   logs,

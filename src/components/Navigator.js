@@ -18,12 +18,11 @@ import FeedbackIcon from '@material-ui/icons/Feedback';
 import { toggleMenu } from '../actions';
 
 
-
 const categories = [
   {
     children: [
       { id: 'Правила', icon: <RulesIcon /> },
-      { id: 'Журнал', icon: <LogsIcon /> },
+      { id: 'Журнал', icon: <LogsIcon />  },
       { id: 'Конфигурация', icon: <ConfigurationIcon /> },
     ],
   },
@@ -80,7 +79,6 @@ const styles = theme => ({
 
 function Navigator(props) {
   const { classes, ...other } = props;
-
   return (
     <Drawer variant="permanent" {...other}>
       <List disablePadding>
