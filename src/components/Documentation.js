@@ -4,7 +4,6 @@ import Paper from '@material-ui/core/Paper';
 
 
 function Documentation(props) {
-  const { classes } = props;
 
   return (
     <Paper>

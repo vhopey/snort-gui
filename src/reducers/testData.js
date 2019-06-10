@@ -1,4 +1,5 @@
-export let rules = [
+/* eslint-disable no-useless-escape */
+export const rules = [
   {
     id: 'rule_1',
     action: 'alert',
@@ -91,7 +92,7 @@ export let rules = [
   },
 ];
 
-export let logs = [
+export const logs = [
   {
     name: 'За час',
     data: `  
@@ -222,36 +223,26 @@ Packet
 ]
 ;
 
-export let settings = {
-  checkUpdate: '1', // days
-  admins: [
-    {
-      name: 'admin',
-      password: 'admin',
-      access: 'full',
-    },
-    {
-      name: 'Andrew',
-      password: 'andrew',
-      access: 'medium',
-    },
-    {
-      name: 'Chack',
-      password: 'chackChack',
-      access: 'small',
-    },
-  ],
-  keepLogs: '5',  // week
-};
-
-export let feedbacks = [
+export const admins = [
   {
-    status: 'прочитано',
-    text: 'Благодарю за приложение! Хотелось бы добавить более понятный вывод логов.',
-    answer: 'Спасибо, мы работаем над этим! Постараемся выпустить в следующем релизе.',
+    name: 'admin',
+    password: 'admin',
   },
   {
-    status: 'отправлено',
-    text: 'Будет ли возможность менять тему интерфейса?',
+    name: 'Andrew',
+    password: 'andrew',
+  },
+  {
+    name: 'Chack',
+    password: 'chackChack',
   },
 ];
+
+export const settings = {
+  checkUpdate: 'day',
+  keepLogs: 'week',
+  rules: 'admin',
+  logs: 'admin',
+  config: 'admin',
+  guiSettings: 'Chack',
+}

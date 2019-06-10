@@ -6,7 +6,6 @@ import Logs from './Logs';
 import Config from './Config';
 import Settings from './settings';
 import Documentation from './Documentation';
-import Feedback from './feedback';
 
 
 function Content(props) {
@@ -22,8 +21,6 @@ function Content(props) {
       return <Settings />
     case "Документация":
       return <Documentation />
-    case "Обратная связь":
-      return <Feedback />
     default:
         return <Rules />
     }

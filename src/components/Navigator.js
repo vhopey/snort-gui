@@ -11,11 +11,11 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import RulesIcon from '@material-ui/icons/Notes';
 import LogsIcon from '@material-ui/icons/FindInPage';
+import LogoutIcon from '@material-ui/icons/Close';
 import DocumentIcon from '@material-ui/icons/LibraryBooks';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ConfigurationIcon from '@material-ui/icons/SettingsApplications';
-import FeedbackIcon from '@material-ui/icons/Feedback';
-import { toggleMenu } from '../actions';
+import { toggleMenu, logout } from '../actions';
 
 
 const categories = [
@@ -34,7 +34,7 @@ const categories = [
   },
   {
     children: [
-      { id: 'Обратная связь', icon: <FeedbackIcon /> },
+      { id: 'Выйти', icon: <LogoutIcon /> },
     ],
   },
 ];
@@ -61,9 +61,6 @@ const styles = theme => ({
       backgroundColor: 'rgba(255, 255, 255, 0.08)',
     },
   },
-  itemActiveItem: {
-    color: '#4fc3f7',
-  },
   itemPrimary: {
     color: 'inherit',
     fontSize: theme.typography.fontSize,
@@ -88,16 +85,15 @@ function Navigator(props) {
         {categories.map(({ id, children }) => (
           <Fragment key={id}>
             <ListItem />
-            {children.map(({ id: childId, icon, active }) => (
+            {children.map(({ id: childId, icon }) => (
               <ListItem
-                onClick={() => props.toggleMenu(childId)}
+                onClick={() => childId === 'Выйти' ? props.logout() : props.toggleMenu(childId)}
                 button
                 dense
                 key={childId}
                 className={clsx(
                   classes.item,
                   classes.itemActionable,
-                  active && classes.itemActiveItem,
                 )}
               >
                 <ListItemIcon>{icon}</ListItemIcon>
@@ -127,5 +123,6 @@ export default connect(
   () => {},
   {
     toggleMenu,
+    logout,
   },
 )(withStyles(styles)(Navigator));

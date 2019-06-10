@@ -126,10 +126,6 @@ function Form(props) {
       <TextField
         id="action"
         select
-        SelectProps={{
-          alert: 'alert',
-          alertss: 'alertss',
-        }}
         required
         label="Действие"
         className={classes.selectField}
