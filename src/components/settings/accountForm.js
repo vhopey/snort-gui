@@ -82,11 +82,11 @@ function SettingsForm(props) {
       props.admins.map((item, index) =>
         <>
           <span> {item.name} </span>
+          <IconButton aria-label="Edit" onClick={() => setViewEditForm(index)}>
+            <EditIcon fontSize="inherit" />
+          </IconButton>
           <IconButton aria-label="Delete" onClick={() => props.deleteAccount(index)}>
             <DeleteIcon fontSize="inherit" />
-          </IconButton>
-          <IconButton aria-label="Delete" onClick={() => setViewEditForm(index)}>
-            <EditIcon fontSize="inherit" />
           </IconButton>
           {viewEditForm === index && form(viewEditForm, {index, values: item })}
           <p />

@@ -24,9 +24,13 @@ const useStyles = makeStyles(theme => ({
   textField: {
     width: 300,
   },
+  error : {
+    color: 'red',
+    margin: '5px 0 15px 0',
+  },
   img: {
     float: 'right',
-    marginTop: '-450px',
+    margin: '-173px 100px 0 0',
   }
 }));
 
@@ -71,11 +75,17 @@ function SignIn(props) {
           onChange={handleChange('password')}
           margin="normal"
         />
+        {
+          props.isAuthorized === false &&
+          <Typography variant="h6" className={classes.error}>
+            Неверное имя или пароль
+          </Typography>
+        }
         <Button onClick={() => props.checkSignIn(values.name, values.password)} variant="contained" size="large">
           Войти
         </Button>
         </form>
-        <img src={require('../assets/snort.jpg')} alt="snort_pic" className={classes.img}/>
+        <img src={require('../assets/snort.png')} alt="snort_pic" className={classes.img}/>
     </>
   );
 }
@@ -85,7 +95,7 @@ SignIn.propTypes = {
 };
 
 export default connect(
-  () => {},
+  (state) => ({isAuthorized: state.isAuthorized}),
   {
     checkSignIn,
   })((SignIn));

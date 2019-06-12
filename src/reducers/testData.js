@@ -7,8 +7,8 @@ export const rules = [
     source: ['192.168.0.1 80', '192.168.0.1 80'],
     dir: '->',
     dest: ['10.10.5.55 80', '10.10.5.5 80'],
-    body: 'msg: whaat',
-    description: 'lal',
+    body: 'msg: test rules',
+    description: 'My first rule',
   },
   {
     id: 'rule_2',
@@ -17,8 +17,8 @@ export const rules = [
     source: ['192.168.0.1 80', '192.168.0.1 80'],
     dir: '<-',
     dest: ['10.10.5.55 80', '10.10.5.5 80'],
-    body: 'msg: whaat',
-    description: 'lal',
+    body: 'msg: attack!',
+    description: '',
   },
   {
     id: 'rule_3',
@@ -28,7 +28,7 @@ export const rules = [
     dir: '->',
     dest: ['10.10.5.55 80', '10.10.5.5 80'],
     body: 'msg: whaat ',
-    description: 'lal',
+    description: '-',
   },
   {
     id: 'rule_4',
@@ -37,8 +37,8 @@ export const rules = [
     source: ['any any'],
     dir: '->',
     dest: ['10.10.5.55 80', '10.10.5.5 80'],
-    body: 'msg: whaat',
-    description: 'lal',
+    body: 'msg: test pass rules',
+    description: '-',
   },
   {
     id: 'rule_5',
@@ -48,7 +48,7 @@ export const rules = [
     dir: '<>',
     dest: ['10.10.5.55 80', '10.10.5.5 80'],
     body: '',
-    description: 'lal',
+    description: '-',
   },
   {
     id: 'rule_6',
@@ -57,8 +57,8 @@ export const rules = [
     source: ['192.168.0.1 80', '192.168.0.1 80'],
     dir: '<>',
     dest: ['10.10.5.55 80', '10.10.5.5 80'],
-    body: 'msg: whaat',
-    description: '',
+    body: 'msg: test drop rules',
+    description: '-',
   },
   {
     id: 'rule_7',
@@ -67,27 +67,7 @@ export const rules = [
     source: ['192.168.0.1 80', '192.168.0.1 80'],
     dir: '<>',
     dest: ['10.10.5.55 80', '10.10.5.5 80'],
-    body: 'msg: whaat',
-    description: 'lal',
-  },
-  {
-    id: 'rule_8',
-    action: 'sdrop',
-    proto: 'IP',
-    source: ['192.168.0.1 80', '192.168.0.1 80'],
-    dir: '->',
-    dest: ['10.10.5.55 80', '10.10.5.5 80'],
-    body: 'msg: whaat',
-    description: 'lal',
-  },
-  {
-    id: 'rule_9',
-    action: 'sdrop',
-    proto: 'TCP',
-    source: ['192.168.0.1 80', '192.168.0.1 80'],
-    dir: '->',
-    dest: ['10.10.5.55 80', '10.10.5.5 80'],
-    body: 'msg: whaat',
+    body: '',
     description: '',
   },
 ];
@@ -230,11 +210,11 @@ export const admins = [
   },
   {
     name: 'Andrew',
-    password: 'andrew',
+    password: 'andrew_admin348',
   },
   {
     name: 'Chack',
-    password: 'chackChack',
+    password: 'ChackOCro9012',
   },
 ];
 

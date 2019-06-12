@@ -65,7 +65,7 @@ function Rules(props) {
           />
       }
       <Table>
-      <TableHead>
+        <TableHead>
           <TableRow>
             <TableCell align="center">Действие</TableCell>
             <TableCell align="center">Протокол</TableCell>
