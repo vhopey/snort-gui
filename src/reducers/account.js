@@ -3,6 +3,7 @@ import {
   CREATE_ACCOUNT,
   DELETE_ACCOUNT,
   EDIT_ACCOUNT,
+  FETCH_ADMINS,
   LOGOUT,
 } from '../actions';
 
@@ -15,6 +16,11 @@ const initialState = {
 
 export default function accountReducer(state = initialState, { type, payload }) {
   switch (type) {
+    case FETCH_ADMINS:
+      return {
+        ...state,
+        admins: payload,
+      }
     case CHECK_SIGN_IN:
       return {
         ...state,

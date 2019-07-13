@@ -1,20 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
-import SettingsForm from './settingsForm';
-import AccountForm from './accountForm'
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import SettingsForm from './settingsForm';
+import AccountForm from './accountForm'
 
 
-
-function TabContainer(props) {
+function TabContainer({children}) {
   return (
     <Typography component="div" style={{ padding: 8 * 3 }}>
-      {props.children}
+      {children}
     </Typography>
   );
 }
@@ -35,7 +33,7 @@ function CheckUpdate() {
     </>
   );
 }
-function Settings(props) {
+function Settings() {
   const [value, setValue] = React.useState(0);
 
   function handleChange(event, newValue) {
@@ -56,9 +54,5 @@ function Settings(props) {
     </Paper>
   );
 }
-
-Settings.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default Settings;

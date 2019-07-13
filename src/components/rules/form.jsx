@@ -224,7 +224,7 @@ function Form(props) {
 }
 
 Form.propTypes = {
-  editValues: PropTypes.object,
+  editValues: PropTypes.objectOf,
 };
 
 Form.defaultProps = {

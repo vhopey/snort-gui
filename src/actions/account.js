@@ -4,8 +4,15 @@ export const CHECK_SIGN_IN = 'CHECK_SIHN_IN';
 export const CREATE_ACCOUNT = 'CREATE_ACCOUNT';
 export const DELETE_ACCOUNT = 'DELETE_ACCOUNT';
 export const EDIT_ACCOUNT = 'EDIT_ACCOUNT';
+export const FETCH_ADMINS = 'FETCH_ADMINS';
 export const LOGOUT = 'LOGOUT';
 
+export function fetchAdmins () {
+  return {
+    type: FETCH_ADMINS,
+    payload: admins,
+  }
+}
 export function checkSignIn(name, password) {
   let authorized = admins.map(item => {
     return (item.name === name && item.password === password)

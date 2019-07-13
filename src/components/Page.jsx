@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { createMuiTheme, withStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -7,6 +6,7 @@ import Hidden from '@material-ui/core/Hidden';
 import Navigator from './Navigator';
 import Content from './Content';
 import Header from './Header';
+
 
 let theme = createMuiTheme({
   typography: {
@@ -154,6 +154,7 @@ class Page extends React.Component {
   };
 
   render() {
+    const mobileOpen = this.state;
     const { classes } = this.props;
 
     return (
@@ -165,7 +166,7 @@ class Page extends React.Component {
               <Navigator
                 PaperProps={{ style: { width: drawerWidth } }}
                 variant="temporary"
-                open={this.state.mobileOpen}
+                open={mobileOpen}
                 onClose={this.handleDrawerToggle}
               />
             </Hidden>
@@ -184,9 +185,5 @@ class Page extends React.Component {
     );
   }
 }
-
-Page.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default withStyles(styles)(Page);

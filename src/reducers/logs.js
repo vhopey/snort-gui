@@ -2,6 +2,7 @@ import {
   FETCH_LOGS,
 } from '../actions';
 
+
 const initialState = {
   logs: [],
 };

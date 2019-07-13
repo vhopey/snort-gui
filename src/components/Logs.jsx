@@ -10,11 +10,10 @@ import Typography from '@material-ui/core/Typography';
 import { fetchLogs } from '../actions';
 
 
-
-function TabContainer(props) {
+function TabContainer({children}) {
   return (
     <Typography component="div" style={{ padding: 8 * 3 }}>
-      {props.children}
+      {children}
       <Button variant="contained" size="medium" color="primary">Очистить журнал за данный период</Button>
     </Typography>
   );
@@ -65,7 +64,7 @@ function Logs(props) {
 }
 
 Logs.propTypes = {
-  logs: PropTypes.array.isRequired,
+  logs: PropTypes.arrayOf.isRequired,
 };
 
 export default connect(

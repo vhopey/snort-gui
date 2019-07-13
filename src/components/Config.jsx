@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -25,7 +24,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function Config(props) {
+function Config() {
   const classes = useStyles();
 
   const [values, setValues] = React.useState({
@@ -59,9 +58,5 @@ function Config(props) {
     </Paper>
   );
 }
-
-Config.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default Config;

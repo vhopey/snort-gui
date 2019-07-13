@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -9,7 +10,7 @@ import Button from '@material-ui/core/Button';
 import { checkSignIn } from '../actions';
 
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   title: {
     fontSize: 24,
     backgroundColor: '#232f3e',
@@ -36,7 +37,7 @@ const useStyles = makeStyles(theme => ({
 
 function SignIn(props) {
   const classes = useStyles();
-
+  const { isAuthorized } = props;
   const [values, setValues] = React.useState({
     name: '',
     password: '',
@@ -76,7 +77,7 @@ function SignIn(props) {
           margin="normal"
         />
         {
-          props.isAuthorized === false &&
+          isAuthorized === false &&
           <Typography variant="h6" className={classes.error}>
             Неверное имя или пароль
           </Typography>
@@ -91,7 +92,7 @@ function SignIn(props) {
 }
 
 SignIn.propTypes = {
-  classes: PropTypes.object.isRequired,
+  isAuthorized: PropTypes.bool.isRequired,
 };
 
 export default connect(

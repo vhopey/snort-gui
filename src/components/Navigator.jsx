@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import clsx from 'clsx';
 import { withStyles } from '@material-ui/core/styles';
@@ -114,10 +113,6 @@ function Navigator(props) {
     </Drawer>
   );
 }
-
-Navigator.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default connect(
   null,

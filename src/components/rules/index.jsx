@@ -16,17 +16,16 @@ import TablePagination from '@material-ui/core/TablePagination';
 import Form from './form';
 import { fetchRules, deleteRule } from '../../actions';
 
-
 const useStyles = makeStyles(theme => ({
   margin: {
     margin: theme.spacing(1),
-    float: "right",
-  },
+    float: 'right'
+  }
 }));
 
 function Rules(props) {
   const { rules } = props;
-  useEffect(()=> {
+  useEffect(() => {
     props.fetchRules();
   });
   const classes = useStyles();
@@ -44,29 +43,36 @@ function Rules(props) {
     setRowsPerPage(+event.target.value);
   }
 
-  const actionsButton = (id) => (
+  const actionsButton = id => (
     <>
       <IconButton aria-label="Edit" onClick={() => toggleEditForm(id)}>
         <EditIcon fontSize="inherit" />
       </IconButton>
-      <IconButton aria-label="Delete" onClick={() => {props.deleteRule(id); toggleDelete(!setDelete)}}>
+      <IconButton
+        aria-label="Delete"
+        onClick={() => {
+          props.deleteRule(id);
+          toggleDelete(!setDelete);
+        }}
+      >
         <DeleteIcon fontSize="inherit" />
       </IconButton>
     </>
-  )
+  );
 
   return (
     <Paper>
-      <Button onClick={() => toggleForm(!viewForm)} variant="contained" size="medium" color="primary" className={classes.margin}>
+      <Button
+        onClick={() => toggleForm(!viewForm)}
+        variant="contained"
+        size="medium"
+        color="primary"
+        className={classes.margin}
+      >
         <AddIcon />
-          Добавить правило
+        Добавить правило
       </Button>
-      {
-        viewForm &&
-          <Form
-            closeForm={toggleForm}
-          />
-      }
+      {viewForm && <Form closeForm={toggleForm} />}
       <Table>
         <TableHead>
           <TableRow>
@@ -84,32 +90,30 @@ function Rules(props) {
           {rules
             .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             .map((rule, index) => (
-            <>
-            {
-                viewEditForm === index ? (
-                <TableRow key={index}>
-                  <TableCell colSpan={8}>
-                    <Form 
-                      editValues={{rule, index}}
-                      toggleEdit={toggleEditForm}
-                    />
-                  </TableCell>
-                </TableRow>
+              <>
+                {viewEditForm === index ? (
+                  <TableRow key={index}>
+                    <TableCell colSpan={8}>
+                      <Form
+                        editValues={{ rule, index }}
+                        toggleEdit={toggleEditForm}
+                      />
+                    </TableCell>
+                  </TableRow>
                 ) : (
-                <TableRow key={index}>
-                  <TableCell>{rule.action}</TableCell>
-                  <TableCell>{rule.proto}</TableCell>
-                  <TableCell>{rule.source}</TableCell>
-                  <TableCell>{rule.dir}</TableCell>
-                  <TableCell>{rule.dest}</TableCell>
-                  <TableCell>{rule.body}</TableCell>
-                  <TableCell>{rule.description}</TableCell>
-                  <TableCell>{actionsButton(index)}</TableCell>
-                </TableRow>
-              )
-            }
-            </>
-          ))}
+                  <TableRow key={index}>
+                    <TableCell>{rule.action}</TableCell>
+                    <TableCell>{rule.proto}</TableCell>
+                    <TableCell>{rule.source}</TableCell>
+                    <TableCell>{rule.dir}</TableCell>
+                    <TableCell>{rule.dest}</TableCell>
+                    <TableCell>{rule.body}</TableCell>
+                    <TableCell>{rule.description}</TableCell>
+                    <TableCell>{actionsButton(index)}</TableCell>
+                  </TableRow>
+                )}
+              </>
+            ))}
         </TableBody>
       </Table>
       <TablePagination
@@ -119,10 +123,10 @@ function Rules(props) {
         rowsPerPage={rowsPerPage}
         page={page}
         backIconButtonProps={{
-          'aria-label': 'Previous Page',
+          'aria-label': 'Previous Page'
         }}
         nextIconButtonProps={{
-          'aria-label': 'Next Page',
+          'aria-label': 'Next Page'
         }}
         onChangePage={handleChangePage}
         onChangeRowsPerPage={handleChangeRowsPerPage}
@@ -132,9 +136,9 @@ function Rules(props) {
 }
 
 export default connect(
-  state => ({rules: state.rules.rules}),
+  state => ({ rules: state.rules.rules }),
   {
     deleteRule,
-    fetchRules,
+    fetchRules
   }
 )(Rules);

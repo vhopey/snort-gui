@@ -27,7 +27,7 @@ function Content(props) {
 }
 
 Content.propTypes = {
-  menuTypes: PropTypes.string.isRequired,
+  activePage: PropTypes.string.isRequired,
 };
 
 export default connect(

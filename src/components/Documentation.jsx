@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
@@ -7,11 +6,10 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 
 
-
-function TabContainer(props) {
+function TabContainer({children}) {
   return (
     <Typography component="div" style={{ padding: 8 * 3 }}>
-      {props.children}
+      {children}
     </Typography>
   );
 };
@@ -30,11 +28,11 @@ function ControlSnort() {
       <p /> 
       В журнале отображаются логи за выбранный период.
       Если вы хотите изменить длительность хранения логов, вам необходимо перейти в Настройки.
-      Внимание! При нажатии кнопки "Очистить логи за данный период" данные не восстановить.
+      Внимание! При нажатии кнопки &quot;Очистить логи за данный период&quot; данные не восстановить.
       <p /> 
       <b> Конфигурация </b>
       <p /> 
-      Для добавления параметров в файл конфигурации, напишите в поле данные и нажмите кнопку "Добавить".
+      Для добавления параметров в файл конфигурации, напишите в поле данные и нажмите кнопку &quot;Добавить&quot;.
       Чтобы удостовериться в правильности введённых данных рекомендуется скачивать файл конфигурации и проверять
       в соответствии с документацией.
     </Typography>
@@ -47,13 +45,13 @@ function Settings() {
       С помощью общих настроек возможно настроить проверку обновлений и длительность хранения логов.
       Рекомендуется изначально настраивать разграничение доступа, чтобы избежать ошибок и потери данных.
       В будущем планируется добавить более расширенное разграничение доступа.
-      Проверить обновления вручную можно также из страницы настроек в разделе "Проверка обновлений".
+      Проверить обновления вручную можно также из страницы настроек в разделе &quot;Проверка обновлений&quot;.
     </Typography>
   );
 };
 
 
-function Documentation(props) {
+function Documentation() {
   const [value, setValue] = React.useState(0);
 
   function handleChange(event, newValue) {
@@ -73,9 +71,5 @@ function Documentation(props) {
     </Paper>
   );
 }
-
-Documentation.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default Documentation;
