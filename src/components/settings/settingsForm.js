@@ -212,7 +212,7 @@ SettingsForm.propTypes = {
 };
 
 export default connect(
-  (state) => ({settings: state.settings}),
+  (state) => ({settings: state.settings.settings}),
   {
     saveSettings,
   })((SettingsForm));

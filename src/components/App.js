@@ -9,13 +9,13 @@ class App extends React.Component {
   render() {
     const { isAuthorized } = this.props;
     return(
-      isAuthorized ? 
-        <Page /> :
-        <SignIn />
+      // isAuthorized ? 
+        <Page /> 
+        // <SignIn />
     )
   }
 }
 export default connect(
-  (state) =>({isAuthorized: state.isAuthorized}),
+  (state) =>({isAuthorized: state.account.isAuthorized}),
   {},
 )(App);

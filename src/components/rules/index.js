@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -14,7 +14,7 @@ import AddIcon from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button';
 import TablePagination from '@material-ui/core/TablePagination';
 import Form from './form';
-import { deleteRule } from '../../actions';
+import { fetchRules, deleteRule } from '../../actions';
 
 
 const useStyles = makeStyles(theme => ({
@@ -26,6 +26,9 @@ const useStyles = makeStyles(theme => ({
 
 function Rules(props) {
   const { rules } = props;
+  useEffect(()=> {
+    props.fetchRules();
+  });
   const classes = useStyles();
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [page, setPage] = React.useState(0);
@@ -129,8 +132,9 @@ function Rules(props) {
 }
 
 export default connect(
-  state => ({rules: state.rules}),
+  state => ({rules: state.rules.rules}),
   {
     deleteRule,
+    fetchRules,
   }
 )(Rules);

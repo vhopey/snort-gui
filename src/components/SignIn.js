@@ -95,7 +95,7 @@ SignIn.propTypes = {
 };
 
 export default connect(
-  (state) => ({isAuthorized: state.isAuthorized}),
+  (state) => ({isAuthorized: state.account.isAuthorized}),
   {
     checkSignIn,
   })((SignIn));

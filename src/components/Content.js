@@ -31,6 +31,6 @@ Content.propTypes = {
 };
 
 export default connect(
-  state => ({activePage: state.activePage}),
+  state => ({activePage: state.control.activePage}),
   {},
 )(Content);

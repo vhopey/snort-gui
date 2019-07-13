@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-escape */
 export const rules = [
   {
     id: 'rule_1',

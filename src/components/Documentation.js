@@ -19,7 +19,7 @@ function TabContainer(props) {
 function ControlSnort() {
   return (
     <Typography component="div">
-      <b>Правила </b>
+      <b> Правила </b>
       <p /> 
       При создании правило добавляется в конец таблицы.
       При редактировании форма отображается на месте строки выбранного для редактирования правила.

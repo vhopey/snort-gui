@@ -107,7 +107,7 @@ SettingsForm.propTypes = {
 };
 
 export default connect(
-  (state) => ({admins: state.admins}),
+  (state) => ({admins: state.account.admins}),
   {
     createAccount,
     deleteAccount,
