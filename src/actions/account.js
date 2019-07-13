@@ -1,10 +1,10 @@
 import {  admins } from './testData';
 
 export const CHECK_SIGN_IN = 'CHECK_SIHN_IN';
-export const LOGOUT = 'LOGOUT';
-export const DELETE_ACCOUNT = 'DELETE_ACCOUNT';
 export const CREATE_ACCOUNT = 'CREATE_ACCOUNT';
+export const DELETE_ACCOUNT = 'DELETE_ACCOUNT';
 export const EDIT_ACCOUNT = 'EDIT_ACCOUNT';
+export const LOGOUT = 'LOGOUT';
 
 export function checkSignIn(name, password) {
   let authorized = admins.map(item => {

@@ -1,7 +1,7 @@
 import {
   CHECK_SIGN_IN,
-  DELETE_ACCOUNT,
   CREATE_ACCOUNT,
+  DELETE_ACCOUNT,
   EDIT_ACCOUNT,
   LOGOUT,
 } from '../actions';

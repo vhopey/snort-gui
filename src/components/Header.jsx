@@ -25,7 +25,7 @@ const styles = theme => ({
 });
 
 function Header(props) {
-  const { classes, onDrawerToggle, activePage } = props;
+  const { activePage, classes, onDrawerToggle } = props;
 
   return (
     <Fragment>

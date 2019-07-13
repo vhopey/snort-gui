@@ -1,7 +1,6 @@
 import {
   FETCH_LOGS,
 } from '../actions';
-// import { logs } from '../actions/testData';
 
 const initialState = {
   logs: [],

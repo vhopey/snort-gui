@@ -34,12 +34,12 @@ function Form(props) {
 
   const [values, setValues] = React.useState(editValues ? editValues.rule : {
     action: '',
-    proto: '',
-    source: '',
-    dir: '',
-    dest: '',
     body: '',
     description: '',
+    dest: '',
+    dir: '',
+    proto: '',
+    source: '',
   });
 
   const handleChange = name => event => {

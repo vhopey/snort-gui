@@ -1,7 +1,7 @@
 import {
-  EDIT_RULE,
-  DELETE_RULE,
   ADD_RULE,
+  DELETE_RULE,
+  EDIT_RULE,
   FETCH_RULES,
 } from '../actions';
 
