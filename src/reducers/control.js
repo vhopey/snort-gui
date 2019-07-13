@@ -4,7 +4,7 @@ import {
 
 
 const initialState = {
-  activePage: 'Журнал',
+  activePage: 'Правила',
 };
 
 export default function controlReducer(state = initialState, { type, payload }) {

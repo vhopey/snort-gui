@@ -120,7 +120,7 @@ Navigator.propTypes = {
 };
 
 export default connect(
-  () => {},
+  null,
   {
     toggleMenu,
     logout,

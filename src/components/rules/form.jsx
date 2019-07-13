@@ -232,7 +232,7 @@ Form.defaultProps = {
 }
 
 export default connect(
-  () => {},
+  null,
   {
     addRule,
     editRule,
